@@ -5,11 +5,11 @@
 
 If starting from Windows OS…<p>
 1. Download and partition system to install Fedora (or other Linux operating system) 
-⋅⋅*It is highly recommended that you backup your system prior to going through this process
-⋅⋅*May need to format a USB to be a disk drive to install Fedora – then reboot the computer in BIOS mode
-⋅⋅*https://getfedora.org/
-⋅⋅*https://www.lifewire.com/guide-to-installing-fedora-linux-2202074 (how-to guide)
-⋅⋅*Partitioning roughly 100-200GB should be enough to start with 
+*It is highly recommended that you backup your system prior to going through this process
+*May need to format a USB to be a disk drive to install Fedora – then reboot the computer in BIOS mode
+*https://getfedora.org/
+*https://www.lifewire.com/guide-to-installing-fedora-linux-2202074 (how-to guide)
+*Partitioning roughly 100-200GB should be enough to start with 
     
 If starting from Linux OS or after successfully partitioned system…
     1. Download and install Mercurial (hg) (https://www.mercurial-scm.org/)
