@@ -29,16 +29,14 @@ sudo dnf install vtk-devel
 ```cpp
 sudo dnf install gcc-c++
 ```
-4. Download Model (DD) package using Mercurial (https://bitbucket.org/model/model/wiki/Home)
+4. Clone the Model (DD) package using Mercurial (https://bitbucket.org/model/model/wiki/Home)
     - Use the terminal to move to the Documents folder (or wherever you want to place the Model code)
 ```cpp
 hg clone https://model@bitbucket.org/model/model Model
-```
-
-- Then, cd into the created Model folder and enter the following command (pulls the most updated branch):
-```cpp
+cd Model
 hg update DiscreteCrackMechanics #moves user to the DiscreteCrackMechanics branch
 ```
+
 5. Download Eigen package using Mercurial 
     - Library to assist with matrix math computation throughout the dislocation dynamics code
     - Use the terminal to move to the Documents folder (or wherever you want to place the Eigen library)
@@ -50,6 +48,7 @@ sudo ln -s /home/cmcelfresh/Documents/Eigen/unsupported unsupported
 ```
 
 ALTERNATIVELY, you can edit the Makefiles in the Model code (to be discussed later)
+
 6. Download and install FFmpeg package
     - FFmpeg package assists with creating videos from the produced DD figures
 ```cpp
