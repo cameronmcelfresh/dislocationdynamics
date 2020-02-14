@@ -2,35 +2,32 @@
 # How-To : Set Up Dislocation Dynamics Package
 <em>Note: The commands in this tutorial are written for a tutorial system, so there may be slightly differences depending on your computer. </em>
 
-1. one
-   * nested
-
-2. two
-   * nested
-
-3. three
-   * nested
 
 If starting from Windows OS…<p>
 1. Download and partition system to install Fedora (or other Linux operating system) 
      - It is highly recommended that you backup your system prior to going through this process
      - May need to format a USB to be a disk drive to install Fedora – then reboot the computer in BIOS mode
-    -https://getfedora.org/
-    -https://www.lifewire.com/guide-to-installing-fedora-linux-2202074 (how-to guide)
-    -Partitioning roughly 100-200GB should be enough to start with 
+    - https://getfedora.org/
+    - https://www.lifewire.com/guide-to-installing-fedora-linux-2202074 (how-to guide)
+    - Partitioning roughly 100-200GB should be enough to start with 
     
 If starting from Linux OS or after successfully partitioned system…
-    1. Download and install Mercurial (hg) (https://www.mercurial-scm.org/)
-        ◦ Package will assist with source control management and branch updates 
+1. Download and install Mercurial (hg) (https://www.mercurial-scm.org/)
+ ◦ Package will assist with source control management and branch updates 
         ◦  sudo dnf install hg
-    2. Download and install VTK and VTK developer tools (https://vtk.org/)
-        ◦ Package will provide visualization tools for DD
+2. Download and install VTK and VTK developer tools (https://vtk.org/)
+    - Package will provide visualization tools for DD
+
+```cpp
+sudo dnf install vtk
+```
+
         ◦  sudo dnf install vtk
         ◦  sudo dnf install vtk-devel
-    3. Download latest gcc version
+3. Download latest gcc version
         ◦  sudo dnf install gcc-c++
-    4. Download Model (DD) package using Mercurial (https://bitbucket.org/model/model/wiki/Home)
-        ◦ Use the terminal to move to the Documents folder (or wherever you want to place the Model code)
+4. Download Model (DD) package using Mercurial (https://bitbucket.org/model/model/wiki/Home)
+    - Use the terminal to move to the Documents folder (or wherever you want to place the Model code)
         ◦  hg clone https://model@bitbucket.org/model/model Model  <- uses hg to pull code and creates the Model folder 
         ◦ Then, cd into the created Model folder and enter the following command:
         ◦  hg update DiscreteCrackMechanics <- moves user to the DiscreteCrackMechanics branch
