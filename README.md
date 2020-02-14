@@ -159,9 +159,9 @@ make
 cmake .
 Make
 ```
-3. This creates a DDvtk executable that can be placed in any of DD tutorial files! DDvtk can be run before the simulation (to see initial microstructure), during the simulation (it continues to update the structure as the folders are populated), and after the simulation for post processing. 
+This creates a DDvtk executable that can be placed in any of DD tutorial files! DDvtk can be run before the simulation (to see initial microstructure), during the simulation (it continues to update the structure as the folders are populated), and after the simulation for post processing. 
 
-4. Copy the DDvtk file and place it in any of the following tutorial folders:
+5. Copy the DDvtk file and place it in any of the following tutorial folders:
     - Model/tutorials/DislocationDynamics/finiteDomains_NO_FEM/uniformLoadController
     - Model/tutorials/DislocationDynamics/finiteDomains_FEM/cantileverBeam_strainControl
     - Model/tutorials/DislocationDynamics/finiteDomains_FEM/uniaxialPillar_StressControl
