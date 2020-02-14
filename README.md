@@ -171,7 +171,7 @@ Make
 
 
 ## How-To: Run Dislocation Dynamics
-Assuming all previous steps have been followed correctly and each piece is installed, running DD can be done with the following commands. As previous, the most recent gcc compiler will be necessary to successfully run DD. Ensure that you are in the proper directory within the tutorial folders, which could be:
+Assuming all previous steps have been followed correctly and each piece is installed, running DD can be done with the following commands. As previous, the most recent gcc compiler will be necessary to successfully run DD. Ensure that you are in the proper directory within the tutorial folders, which could be: </p>
     - Model/tutorials/DislocationDynamics/finiteDomains_NO_FEM/uniformLoadController
     - Model/tutorials/DislocationDynamics/finiteDomains_FEM/cantileverBeam_strainControl
     - Model/tutorials/DislocationDynamics/finiteDomains_FEM/uniaxialPillar_StressControl
