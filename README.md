@@ -47,7 +47,7 @@ sudo ln -s /home/cmcelfresh/Documents/Eigen Eigen
 sudo ln -s /home/cmcelfresh/Documents/Eigen/unsupported unsupported
 ```
 
-ALTERNATIVELY, you can edit the Makefiles in the Model code (to be discussed later)
+Alternatively, you can edit the Makefiles in the Model code (to be discussed later)
 
 6. Download and install FFmpeg package
     - FFmpeg package assists with creating videos from the produced DD figures
@@ -91,7 +91,7 @@ hg clone https://bitbucket.org/eigen/eigen/ Eigen #uses hg to pull code and crea
 sudo ln -s /home/cmcelfresh/Documents/Eigen Eigen
 sudo ln -s /home/cmcelfresh/Documents/Eigen/unsupported unsupported
 ```
-- ALTERNATIVELY, you can edit the path in the Makefile in the Model code (to be discussed later)
+^Alternatively, you can edit the path in the Makefile in the Model code (to be discussed later)^
     
 3. Load most recent gcc compiler. 
     - Note that you may need to do this each new interactive session on hoffman2, as the default compiler may older than that required by DD. 
