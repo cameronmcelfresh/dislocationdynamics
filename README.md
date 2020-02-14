@@ -157,7 +157,7 @@ make
     - Run the following commands:
 ```cpp
 cmake .
-Make
+make
 ```
 This creates a DDvtk executable that can be placed in any of DD tutorial files! DDvtk can be run before the simulation (to see initial microstructure), during the simulation (it continues to update the structure as the folders are populated), and after the simulation for post processing. 
 
@@ -231,7 +231,7 @@ neper -M n1-id1.tess  #assuming the .tess file previously produced is n1-id1.tes
 3. The location of the .msh file should then be specified in the inputFiles/polycrystal.txt file.
 
 
-Note:  After a new .msh file is generated and specified in polycrystal.txt, the corresponding microstructureGenerator, Ddvtk, and Ddomp executables must ALSO be regenerated.
+Note:  After a new .msh file is generated and specified in polycrystal.txt, the corresponding microstructureGenerator, Ddvtk, and DDomp executables must ALSO be regenerated.
 
 ## How-To:  Record Video using FFmpeg
 
