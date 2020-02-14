@@ -58,9 +58,12 @@ sudo dnf install ffmpeg
     - TetGen assists with generating customizable meshes for DD simulations
     - Download online http://wiasberlin.de/software/index.jsp?id=TetGen&lang=1#Download
     - Follow instructions on compiling TetGen code to create executable. 
-            i. Put all downloaded material in its own Tetgen folder
-            ii. Move into the folder using the command line:
-            iii.  make 
+          - Put all downloaded material in its own Tetgen folder
+          -  Move into the folder using the command line:
+```cpp
+cd TetGen
+make
+```
 8. Download and install Intel Math Kernel Library 
     - Find download at https://software.intel.com/en-us/mkl/choose-download
     - Select “Intel Parallel Studio XE”
@@ -73,13 +76,10 @@ sudo dnf install ffmpeg
     - Use the terminal to move to the Documents folder (or wherever you want to place the Model code)
 ```cpp
 hg clone https://model@bitbucket.org/model/model Model  #uses hg to pull code and creates the Model folder
-```
-
-- Then, cd into the created Model folder and enter the following command:
-    
-```cpp
+cd Model
 hg update DiscreteCrackMechanics #moves user to the DiscreteCrackMechanics branch
 ```
+
 2. Download Eigen package using Mercurial 
     - Eigen assists with matrix math computation throughout the dislocation dynamics code
     - Use the terminal to move to a folder outside of the newly created Model folder (or wherever you want to place the Eigen library)
