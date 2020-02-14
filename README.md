@@ -2,11 +2,19 @@
 # How-To : Set Up Dislocation Dynamics Package
 <em>Note: The commands in this tutorial are written for a tutorial system, so there may be slightly differences depending on your computer. </em>
 
+1. one
+   * nested
+
+2. two
+   * nested
+
+3. three
+   * nested
 
 If starting from Windows OS…<p>
 1. Download and partition system to install Fedora (or other Linux operating system) 
-     -It is highly recommended that you backup your system prior to going through this process
-     -May need to format a USB to be a disk drive to install Fedora – then reboot the computer in BIOS mode
+     - It is highly recommended that you backup your system prior to going through this process
+     - May need to format a USB to be a disk drive to install Fedora – then reboot the computer in BIOS mode
     -https://getfedora.org/
     -https://www.lifewire.com/guide-to-installing-fedora-linux-2202074 (how-to guide)
     -Partitioning roughly 100-200GB should be enough to start with 
