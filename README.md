@@ -13,28 +13,35 @@ If starting from Windows OS…<p>
     
 If starting from Linux OS or after successfully partitioned system…
 1. Download and install Mercurial (hg) (https://www.mercurial-scm.org/)
- ◦ Package will assist with source control management and branch updates 
-        ◦  sudo dnf install hg
+    - Package will assist with source control management and branch updates 
+```cpp
+sudo dnf install hg
+```
 2. Download and install VTK and VTK developer tools (https://vtk.org/)
     - Package will provide visualization tools for DD
 
 ```cpp
 sudo dnf install vtk
+sudo dnf install vtk-devel
 ```
 
-        ◦  sudo dnf install vtk
-        ◦  sudo dnf install vtk-devel
 3. Download latest gcc version
-        ◦  sudo dnf install gcc-c++
+```cpp
+sudo dnf install gcc-c++
+```
 4. Download Model (DD) package using Mercurial (https://bitbucket.org/model/model/wiki/Home)
     - Use the terminal to move to the Documents folder (or wherever you want to place the Model code)
-        ◦  hg clone https://model@bitbucket.org/model/model Model  <- uses hg to pull code and creates the Model folder 
-        ◦ Then, cd into the created Model folder and enter the following command:
-        ◦  hg update DiscreteCrackMechanics <- moves user to the DiscreteCrackMechanics branch
-            i. This is the most commonly updated branch by Giacomo
-    5. Download Eigen package using Mercurial 
-        ◦ Library to assist with matrix math computation throughout the dislocation dynamics code
-        ◦ Use the terminal to move to the Documents folder (or wherever you want to place the Eigen library)
+```cpp
+hg clone https://model@bitbucket.org/model/model Model
+```
+
+- Then, cd into the created Model folder and enter the following command (pulls the most updated branch):
+```cpp
+hg update DiscreteCrackMechanics <- moves user to the DiscreteCrackMechanics branch
+```
+5. Download Eigen package using Mercurial 
+    - Library to assist with matrix math computation throughout the dislocation dynamics code
+    - Use the terminal to move to the Documents folder (or wherever you want to place the Eigen library)
         ◦  hg clone https://bitbucket.org/eigen/eigen/ Eigen <- uses hg to pull code and creates the Eigen folder 
         ◦ OPTIONALLY, users can create symbolic links to the Eigen package with the terminal commands;
             i.  sudo ln -s /home/cmcelfresh/Documents/Eigen Eigen
