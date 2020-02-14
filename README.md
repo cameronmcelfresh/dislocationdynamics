@@ -49,19 +49,19 @@ sudo ln -s /home/cmcelfresh/Documents/Eigen Eigen
 sudo ln -s /home/cmcelfresh/Documents/Eigen/unsupported unsupported
 ```
 ALTERNATIVELY, you can edit the Makefiles in the Model code (to be discussed later)
-    6. Download and install FFmpeg package
+6. Download and install FFmpeg package
     - FFmpeg package assists with creating videos from the produced DD figures
     -  ```cpp
        sudo dnf install ffmpeg
        ```
-    7. Download and install the TetGen package (http://wias-berlin.de/software/tetgen/)
+7. Download and install the TetGen package (http://wias-berlin.de/software/tetgen/)
     - TetGen assists with generating customizable meshes for DD simulations
     - Download online http://wiasberlin.de/software/index.jsp?id=TetGen&lang=1#Download
     - Follow instructions on compiling TetGen code to create executable. 
             i. Put all downloaded material in its own Tetgen folder
             ii. Move into the folder using the command line:
             iii.  make 
-    8. Download and install Intel Math Kernel Library 
+8. Download and install Intel Math Kernel Library 
     - Find download at https://software.intel.com/en-us/mkl/choose-download
     - Select “Intel Parallel Studio XE”
     - Follow instructions for downloading for Linux as a student. You will be required to fill out a brief questionnaire about the usage of MKL for DD. 
@@ -69,7 +69,7 @@ ALTERNATIVELY, you can edit the Makefiles in the Model code (to be discussed lat
     - NOTE: During the installation make note of where the package is installed – its path will be necessary for updating the Model makefiles. 
 
 If starting from UCLA hoffman2 (or other supercomputer)…
-    1. Download Model (DD) package using Mercurial (https://bitbucket.org/model/model/wiki/Home)
+1. Download Model (DD) package using Mercurial (https://bitbucket.org/model/model/wiki/Home)
     - Use the terminal to move to the Documents folder (or wherever you want to place the Model code)
     -  ```cpp
         hg clone https://model@bitbucket.org/model/model Model  #uses hg to pull code and creates the Model folder
@@ -78,7 +78,7 @@ If starting from UCLA hoffman2 (or other supercomputer)…
     -  ```cpp
         hg update DiscreteCrackMechanics #moves user to the DiscreteCrackMechanics branch
        ```
-    2. Download Eigen package using Mercurial 
+2. Download Eigen package using Mercurial 
     - Eigen assists with matrix math computation throughout the dislocation dynamics code
     - Use the terminal to move to a folder outside of the newly created Model folder (or wherever you want to place the Eigen library)
     -  ```cpp
@@ -90,7 +90,7 @@ If starting from UCLA hoffman2 (or other supercomputer)…
         sudo ln -s /home/cmcelfresh/Documents/Eigen/unsupported unsupported
        ```
     - ALTERNATIVELY, you can edit the path in the Makefile in the Model code (to be discussed later)
-    3. Load most recent gcc compiler. 
+3. Load most recent gcc compiler. 
     - Note that you may need to do this each new interactive session on hoffman2, as the default compiler may older than that required by DD. 
     - Show and load gcc compilers using the following commands in the interactive terminal: 
     -  ```cpp
@@ -99,20 +99,20 @@ If starting from UCLA hoffman2 (or other supercomputer)…
        ```
 
 Update the Makefile (for both local and hoffman2/supercomputer use)…
-    1. Go into the Makefile in Model/tutorials/DislocationDynamics/Makefile
-    2. Update the path to the Eigen library
+1. Go into the Makefile in Model/tutorials/DislocationDynamics/Makefile
+2. Update the path to the Eigen library
         1. Update the “EIGEN_INCLUDE = … “ line at the beginning to be your path for Eigen
         2. Example: 
             1. EIGEN_INCLUDE = /home/cmcelfresh/Documents/Eigen/Eigen
-    3. Update the path to MKL (only if using on local machine)
+3. Update the path to MKL (only if using on local machine)
         1. Update the “MKL_INCLUDE = … “ line at the beginning to be your path for  MKL
         2. Note that this will only be necessary if you installed MKL on your local machine and it was not deposited where DD expected it. This step is not necessary if using DD on hoffman2
-        3. Example:
+3. Example:
             1. MKL_INCLUDE=/home/cmcelfresh/intel/mkl/include
-        4. Once MKL has been successfully linked to DD, set the usePARDISO value to 1
+4. Once MKL has been successfully linked to DD, set the usePARDISO value to 1
             1. “usePARDISO = 1”
             2. This greatly increases computational efficiency, particuarly on the FEM-aided simulations. 
-    4. Update the compiler flags for MKL PARDISO (only if using on local Linux machine)
+4. Update the compiler flags for MKL PARDISO (only if using on local Linux machine)
         1. Change line 78 to include your personal path to lib/intel64. 
         2. Example:
             1. “MKL_LIB=/home/cmcelfresh/intel/mkl/lib/intel64”
@@ -124,16 +124,16 @@ Update the Makefile (for both local and hoffman2/supercomputer use)…
 Updating visualization aid VTK…
 Dislocations Dynamics has been developed in a way that all simulations can be viewed in a frame-by-frame fashion – which provides excellent insight into the mechanisms dominating dislocation interactions. As such, it is highly recommended that the VTK visualization aid to used alongside all simulations!
 HOWEVER, VTK is not currently compatible with hoffman2 (as of 2019) , so it it recommended that you run VTK through a hoffman2-mounted folder on your local machine. More on mounting later.
-    1. Ensure that a recent version of cmake is installed. 
+1. Ensure that a recent version of cmake is installed. 
         1. If not, the most recent version can be installed on Fedora using:
             1. sudo dnf install cmake
-        2. Similarly, the more recent versions of cmake can be loaded on hoffman2 by submitted the command
+2. Similarly, the more recent versions of cmake can be loaded on hoffman2 by submitted the command
             1. module available cmake ← lists the available versions of cmake 
             2. module load cmake/”most recent version #” ← loads desired version of cmake 
-    2. Go to the tutotrials folder of your locally mounted DD code and re”make” the code to update the header files
+2. Go to the tutotrials folder of your locally mounted DD code and re”make” the code to update the header files
             1. Go to → Model/tutorials/DislocationDynamics/finiteDomains_NO_FEM/uniformLoadController
             2.  make
-    3. Compile DDvtk
+3. Compile DDvtk
         1. Go into the VTK DD folder /home/cmcelfresh/Documents/Model/tools/DDvtk
         2. Run the following commands:
             1. cmake .
