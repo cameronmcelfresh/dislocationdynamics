@@ -34,7 +34,7 @@ sudo dnf install gcc-c++
 ```cpp
 hg clone https://model@bitbucket.org/model/model Model
 cd Model
-hg update DiscreteCrackMechanics #moves user to the DiscreteCrackMechanics branch
+hg update DiscreteCrackMechanics 
 ```
 
 5. Download Eigen package using Mercurial 
@@ -75,9 +75,9 @@ make
 1. Download Model (DD) package using Mercurial (https://bitbucket.org/model/model/wiki/Home)
     - Use the terminal to move to the Documents folder (or wherever you want to place the Model code)
 ```cpp
-hg clone https://model@bitbucket.org/model/model Model  #uses hg to pull code and creates the Model folder
+hg clone https://model@bitbucket.org/model/model Model  
 cd Model
-hg update DiscreteCrackMechanics #moves user to the DiscreteCrackMechanics branch
+hg update DiscreteCrackMechanics
 ```
 
 2. Download Eigen package using Mercurial 
@@ -91,7 +91,7 @@ hg clone https://bitbucket.org/eigen/eigen/ Eigen #uses hg to pull code and crea
 sudo ln -s /home/cmcelfresh/Documents/Eigen Eigen
 sudo ln -s /home/cmcelfresh/Documents/Eigen/unsupported unsupported
 ```
-<sub>Alternatively, you can edit the path in the Makefile in the Model code (to be discussed later)</sub>
+Alternatively, you can edit the path in the Makefile in the Model code (to be discussed later)
     
 3. Load most recent gcc compiler. 
     - Note that you may need to do this each new interactive session on hoffman2, as the default compiler may older than that required by DD. 
@@ -181,8 +181,8 @@ make
 ```
 2. Create and run the microstructureGenerator
 ```cpp
-make microstructureGenerator #creates microstructureGenerator executable
-./microstructureGenerator #generates starting microstructure
+make microstructureGenerator 
+./microstructureGenerator 
 ```
 3. Remove old evl files (node/line position)
 ```cpp
