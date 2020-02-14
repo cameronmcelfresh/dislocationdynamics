@@ -37,26 +37,30 @@ hg clone https://model@bitbucket.org/model/model Model
 
 - Then, cd into the created Model folder and enter the following command (pulls the most updated branch):
 ```cpp
-hg update DiscreteCrackMechanics <- moves user to the DiscreteCrackMechanics branch
+hg update DiscreteCrackMechanics #moves user to the DiscreteCrackMechanics branch
 ```
 5. Download Eigen package using Mercurial 
     - Library to assist with matrix math computation throughout the dislocation dynamics code
     - Use the terminal to move to the Documents folder (or wherever you want to place the Eigen library)
-    - hg clone https://bitbucket.org/eigen/eigen/ Eigen <- uses hg to pull code and creates the Eigen folder 
+    - hg clone https://bitbucket.org/eigen/eigen/ Eigen #uses hg to pull code and creates the Eigen folder 
     - OPTIONALLY, users can create symbolic links to the Eigen package with the terminal commands;
-            i.  sudo ln -s /home/cmcelfresh/Documents/Eigen Eigen
-            ii.  sudo ln -s /home/cmcelfresh/Documents/Eigen/unsupported unsupported
-            iii. ALTERNATIVELY, you can edit the Makefiles in the Model code (to be discussed later)
+```cpp
+sudo ln -s /home/cmcelfresh/Documents/Eigen Eigen
+sudo ln -s /home/cmcelfresh/Documents/Eigen/unsupported unsupported
+```
+ALTERNATIVELY, you can edit the Makefiles in the Model code (to be discussed later)
     6. Download and install FFmpeg package
     - FFmpeg package assists with creating videos from the produced DD figures
-        ◦  sudo dnf install ffmpeg
+    -  ```cpp
+       sudo dnf install ffmpeg
+       ```
     7. Download and install the TetGen package (http://wias-berlin.de/software/tetgen/)
     - TetGen assists with generating customizable meshes for DD simulations
     - Download online http://wiasberlin.de/software/index.jsp?id=TetGen&lang=1#Download
     - Follow instructions on compiling TetGen code to create executable. 
             i. Put all downloaded material in its own Tetgen folder
-            ii. Move into the folder using the command line
-            iii.  make <- this should create a tetgen executable file
+            ii. Move into the folder using the command line:
+            iii.  make 
     8. Download and install Intel Math Kernel Library 
     - Find download at https://software.intel.com/en-us/mkl/choose-download
     - Select “Intel Parallel Studio XE”
@@ -67,22 +71,32 @@ hg update DiscreteCrackMechanics <- moves user to the DiscreteCrackMechanics bra
 If starting from UCLA hoffman2 (or other supercomputer)…
     1. Download Model (DD) package using Mercurial (https://bitbucket.org/model/model/wiki/Home)
     - Use the terminal to move to the Documents folder (or wherever you want to place the Model code)
-        ◦  hg clone https://model@bitbucket.org/model/model Model  <- uses hg to pull code and creates the Model folder 
+    -  ```cpp
+        hg clone https://model@bitbucket.org/model/model Model  #uses hg to pull code and creates the Model folder
+       ```
     - Then, cd into the created Model folder and enter the following command:
-        ◦  hg update DiscreteCrackMechanics <- moves user to the DiscreteCrackMechanics branch
+    -  ```cpp
+        hg update DiscreteCrackMechanics #moves user to the DiscreteCrackMechanics branch
+       ```
     2. Download Eigen package using Mercurial 
-    - Library to assist with matrix math computation throughout the dislocation dynamics code
-    -  Use the terminal to move to a folder outside of the newly created Model folder (or wherever you want to place the Eigen library)
-        ◦  hg clone https://bitbucket.org/eigen/eigen/ Eigen <- uses hg to pull code and creates the Eigen folder 
-    - OPTIONALLY, users can create symbolic links to the Eigen package with the terminal commands;
-            i.  sudo ln -s /home/cmcelfresh/Documents/Eigen Eigen
-            ii.  sudo ln -s /home/cmcelfresh/Documents/Eigen/unsupported unsupported
-            iii. ALTERNATIVELY, you can edit the path in the Makefile in the Model code (to be discussed later)
+    - Eigen assists with matrix math computation throughout the dislocation dynamics code
+    - Use the terminal to move to a folder outside of the newly created Model folder (or wherever you want to place the Eigen library)
+    -  ```cpp
+        hg clone https://bitbucket.org/eigen/eigen/ Eigen #uses hg to pull code and creates the Eigen folder 
+       ```
+    - OPTIONALLY, users can create symbolic links to the Eigen package with the terminal commands:
+    -  ```cpp
+        sudo ln -s /home/cmcelfresh/Documents/Eigen Eigen
+        sudo ln -s /home/cmcelfresh/Documents/Eigen/unsupported unsupported
+       ```
+    - ALTERNATIVELY, you can edit the path in the Makefile in the Model code (to be discussed later)
     3. Load most recent gcc compiler. 
     - Note that you may need to do this each new interactive session on hoffman2, as the default compiler may older than that required by DD. 
-    - Show and load gcc compilers using the following commands in the interactive terminal:
-            i. module available gcc ← lists the available versions of gcc 
-            ii. module load cmake/”most recent version #” ← loads desired version of gcc 
+    - Show and load gcc compilers using the following commands in the interactive terminal: 
+    -  ```cpp
+        module available gcc #lists the available versions of gcc 
+        module load cmake/”most recent version #” #loads desired version of gcc 
+       ```
 
 Update the Makefile (for both local and hoffman2/supercomputer use)…
     1. Go into the Makefile in Model/tutorials/DislocationDynamics/Makefile
