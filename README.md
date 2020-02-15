@@ -255,6 +255,7 @@ bash jpg2mpg.sh
 This will rename the images and then compile them into video.mpg. The video can be further post-processed in an external program. 
 
 Example videos:
+![](https://github.com/cameronmcelfresh/images/blob/master/dislocation_line_gif.gif)
 
 ## How-To: Navigate the MODEL code using doxygen
 
