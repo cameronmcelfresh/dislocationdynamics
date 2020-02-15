@@ -233,9 +233,28 @@ neper -M n1-id1.tess  #assuming the .tess file previously produced is n1-id1.tes
 
 Note:  After a new .msh file is generated and specified in polycrystal.txt, the corresponding microstructureGenerator, Ddvtk, and DDomp executables must ALSO be regenerated.
 
-## How-To:  Record Video using FFmpeg
+## How-To: Use DDvtk
 
 
+## How-To: Record Video using FFmpeg
+1. Ensure that FFmpeg is downloaded and installed (following the steps above)
+2. Run a DD simulation until a desirable amount of data is collecetd. 
+3. Run DDvtk
+```cpp
+./DDvtk
+```
+4. Organize the visualization space however is preferred (remove the graph, axis, rotate the orientation, zoom, etc.)
+5. Press "i" and then follow the instructions for however many frames per screenshot - this will largely determine the native framerate.
+5. When the DDvtk visualization window is open and selected press "s" and then spacebar, followed by "2". This turns saving ON and selects JPG as the type of image being saved. 
+6. Press on the down arrow to cycle forward in time and consecutively save each image. When the last desired frame has been reached hit "s" and then spacebar again to stop saving. 
+7. cd into the "jpg" folder and run:
+```cpp
+bash renameJpg.sh
+bash jpg2mpg.sh
+```
+This will rename the images and then compile them into video.mpg. The video can be further post-processed in an external program. 
+
+Example videos:
 
 ## How-To: Navigate the MODEL code using doxygen
 
