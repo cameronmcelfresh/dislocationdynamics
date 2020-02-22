@@ -234,7 +234,30 @@ neper -M n1-id1.tess  #assuming the .tess file previously produced is n1-id1.tes
 Note:  After a new .msh file is generated and specified in polycrystal.txt, the corresponding microstructureGenerator, Ddvtk, and DDomp executables must ALSO be regenerated.
 
 ## How-To: Use DDvtk
-
+Follow instructions on how to install VTK found here: https://vtk.org/Wiki/VTK/Building/Linux. Once there is a operational form of VTK installed, do the following:
+1. cd into the Model/tools/DDvtk folder
+2. Run the commands:
+```bash
+cmake .
+make
+```
+3. This creates an DDvtk executable that can then be moved into one of the simulation folders such as;
+- Model/tutorials/DislocationDynamics/finiteDomains_NO_FEM/uniformLoadController
+- Model/tutorials/DislocationDynamics/finiteDomains_FEM/cantileverBeam_strainControl
+- Model/tutorials/DislocationDynamics/finiteDomains_FEM/uniaxialPillar_StressControl
+4. Once there is dislocation node/segment and mesh data present, DDvtk can be run to observe the dislocation structure by executing:
+```cpp
+./DDvtk
+```
+From there, the visualization window can be interacted with by several keyboard and mouse commands:
+- up/down arrow : step frames forwards and backwards
+- i : change the increment of frames
+- e : change dislocation edge appearance (follow console instruction)
+- v : change dislocation node appearance (follow console instruction)
+- s : save images (follow console instruction)
+- y : change y-axis of graph (follow console instruction)
+- x : change x-axis of graph (follow console instruction)
+- mouse : drag mouse to change view, scroll to zoom in/out
 
 ## How-To: Record Video using FFmpeg
 1. Ensure that FFmpeg is downloaded and installed (following the steps above)
