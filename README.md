@@ -1,6 +1,6 @@
 
 # How-To : Set Up Dislocation Dynamics Package
-<em>Note: The commands in this tutorial are written for a tutorial system, so there may be slightly differences depending on your computer. </em>
+<em>Note: The commands in this tutorial are primarily written for a Fedora system, so there may be slightly differences depending on your computer. </em>
 
 
 ### If starting from Windows OS…<p>
