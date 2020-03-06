@@ -100,6 +100,29 @@ Alternatively, you can edit the path in the Makefile in the Model code (to be di
 module available gcc #lists the available versions of gcc 
 module load cmake/”most recent version #” #loads desired version of gcc 
 ```
+### If starting from macOS<p>
+1. Use Homebrew as a package manager to make the installation process easier. You can read about Homebrew here: https://brew.sh/. Homebrew can be installed by using the following command:
+    
+```cpp
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)" 
+```
+2. Install cmake
+```cpp
+brew install cmake
+```
+3. Install Eigen
+```cpp
+brew install eigen
+```
+4. Build a symbolic link for the Eigen library and put it in the /header_symlinks/ folder. 
+```cpp
+sudo ln -s /usr/path/to/Eigen/ Eigen
+```
+5. Install VTK
+```cpp
+brew install vtk
+```
+6. Build DDvtk in the tools/DDvtk/ folder
 
 ## How-To: Update the Makefile (for both local and hoffman2/supercomputer use)…
 1. Go into the Makefile in Model/tutorials/DislocationDynamics/Makefile
