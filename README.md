@@ -122,7 +122,12 @@ sudo ln -s /usr/path/to/Eigen/ Eigen
 ```cpp
 brew install vtk
 ```
-6. Build DDvtk in the tools/DDvtk/ folder
+6. Build DDvtk in the tools/DDvtk/ folder by running:
+```cpp 
+cmake . 
+make
+```
+If an error occurs with the inclusion of fopenmp, it may be necessary to specify the version of g++ compiler in the Makefile such as changing "g++" to "g++-9". More information can be found by reading through the following thread: https://github.com/microsoft/LightGBM/issues/3. 
 
 ## How-To: Update the Makefile (for both local and hoffman2/supercomputer use)…
 1. Go into the Makefile in Model/tutorials/DislocationDynamics/Makefile
