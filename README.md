@@ -311,7 +311,18 @@ TBD
 Example Video: Simulated Climb
 ![](https://github.com/cameronmcelfresh/images/blob/master/dislocation_line_gif.gif)
 
-## How-To: Navigate the MODEL code using doxygen
-
 
 ## How-To: Change the orientation of the crystal 
+The orientation of the crystal is controlled by altering the C2G1 entry in inputFiles/polycrystal.txt. The C2G1 variables is a 3x3 matrix in which each row corresponds to original crystal direction that now represents the new x-axis, y-axis, and z-axis for rows 1, 2, and 3 of the C2G1 matrix, respectively. Each row much be normalized to 1, each row must be orthogonal to one another, and as such, the determinant must be 1. 
+
+For example, if it was desirable to have the [010] direction oriented along the z-axis, an acceptable C2G1 matrix could be;
+```cpp
+C2G1 =  1   0   0
+        0   0   -1
+        0   1   0;
+```
+
+If it is of interest to have the crystal oriented along a certain direction, simply select that direction as either the x, y, or z-axis and then use cross-product and dot product rules to the other appropriate axes. 
+
+## How-To: Navigate the MODEL code using doxygen
+
