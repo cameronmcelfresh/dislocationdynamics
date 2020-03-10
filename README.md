@@ -315,8 +315,8 @@ Example Video: Simulated Climb
 ## How-To: Understand the Units Used in MODEL
 Care must be taken to account for the units specific to MODEL. Some of the units that are encountered most often are:
 
-- Unit of Distance = burgers Vector
-- Unit of Speed = Shear Wave Speed [m/s]
+- Unit of Distance = burgers Vector [m]
+- Unit of Speed = Shear Wave Speed [m/sec]
 - Unit of Time = Unit of Distance / Unit of Speed [sec]
 - Unit of Stress = Shear Modulus of Material [Pa]
 - Unit of Force = Shear Modulus  * (burgers vector)^2 [N]
@@ -326,7 +326,7 @@ The distance units must be accounted for if dislocation structure post-processin
 
 For instance, if a material had a  the burgers vector is set to b = 0.14nm and a shear wave speed of 2000m/s:
 
-A DD node position of (0, 5, 10) would be transformed to (0, 0.7nm, 1.4m)
+A DD node position of (0, 5, 10) would be transformed to (0, 0.7nm, 1.4nm) in real units
 
 A DD strain rate of 1E-9 would be transformed to 1E-14 / (0.14nm/2000) = 0.14 in real units
 
