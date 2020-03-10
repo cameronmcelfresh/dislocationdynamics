@@ -338,10 +338,10 @@ The example evl file reads as follows:
 (# of nodes)
 (# of loops)
 (# of loop segments)
-(node1 ID)	(node1 x-pos) (node1 y-pos) (node1 z-pos)   (node1 x-vel.) (node1 y-vel.) (node1 z-vel.) [non-physical information]
-(node2 ID)	(node2 x-pos) (node2 y-pos) (node2 z-pos)   (node2 x-vel.) (node2 y-vel.) (node2 z-vel.) [non-physical information]
-(node3 ID)	(node3 x-pos) (node3 y-pos) (node3 z-pos)   (node3 x-vel.) (node3 y-vel.) (node3 z-vel.) [non-physical information]
-(node4 ID)	(node4 x-pos) (node4 y-pos) (node4 z-pos)   (node4 x-vel.) (node4 y-vel.) (node4 z-vel.) [non-physical information]
+(node1 ID)	(node1 x-pos) (node1 y-pos) (node1 z-pos)   (node1 x-vel) (node1 y-vel) (node1 z-vel) [non-physical information]
+(node2 ID)	(node2 x-pos) (node2 y-pos) (node2 z-pos)   (node2 x-vel) (node2 y-vel) (node2 z-vel) [non-physical information]
+(node3 ID)	(node3 x-pos) (node3 y-pos) (node3 z-pos)   (node3 x-vel) (node3 y-vel) (node3 z-vel) [non-physical information]
+(node4 ID)	(node4 x-pos) (node4 y-pos) (node4 z-pos)   (node4 x-vel) (node4 y-vel) (node4 z-vel) [non-physical information]
 (loop1 ID) ( 3 - sequence burgers vector of loop1)  ( 3 - sequence plane normal vector of loop1) [non-physical information]
 (loop ID of segment1) (node source) (node sink) (bool for boundary link)
 (loop ID of segment2) (node source) (node sink) (bool for boundary link)
