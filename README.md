@@ -311,6 +311,45 @@ TBD
 Example Video: Simulated Climb
 ![](https://github.com/cameronmcelfresh/images/blob/master/dislocation_line_gif.gif)
 
+## How-To: Read the evl files
+The spatial information from the dislocation structures can be found in the evl folder with labels that correspond to different runIDs. For example, evl_5.txt is from runID=5. However if outputBinary=1 (set in the DD.txt input file) the evl files will be in binary, though they can still be directly analyzed using the graphing functionality in DDvtk. 
+
+A simple example of an evl with a dislocation loop consisting of 4 nodes, 4 segments, a burgers vector of [010] and a plane normal of [100] could be :
+
+```cpp
+4
+1
+4
+0	0.000000000000000e+00 -2.000000000000000e+02 1.000000000000000e+02	0.000000000000000e+00 0.000000000000000e+00 0.000000000000000e+00	1.000000000000000e+00	0	0	0
+1	0.000000000000000e+00 2.000000000000000e+02 1.000000000000000e+02	0.000000000000000e+00 0.000000000000000e+00 0.000000000000000e+00	1.000000000000000e+00	0	0	1
+2	0.000000000000000e+00 -2.000000000000000e+02 -1.000000000000000e+02	0.000000000000000e+00 0.000000000000000e+00 0.000000000000000e+00	1.000000000000000e+00	0	0	2
+3	0.000000000000000e+00 2.000000000000000e+00 -1.000000000000000e+02	0.000000000000000e+00 0.000000000000000e+00 0.000000000000000e+00	1.000000000000000e+00	0	0	3
+0	0.000000000000000e+00  1.000000000000000e+00  0.000000000000000e+00	1.000000000000000e+00 0.000000000000000e+00 0.000000000000000e+00	1.625275402303664e+03 2.649178338026089e+03 8.790044633940530e+03	1	0	-1	0.000000000000000e+00 0.000000000000000e+00 0.000000000000000e+00	0.000000000000000e+00	0.000000000000000e+00	0.000000000000000e+00
+0	0	1	0
+0	1	2	0
+0	2	3	0
+0	3	0	0
+
+```
+
+The example evl file reads as follows:
+
+```cpp
+(# of nodes)
+(# of loops)
+(# of loop segments)
+(node1 ID)	(node1 x-pos) (node1 y-pos) (node1 z-pos) (node1 x-vel.)    (node1 y-vel.) (node1 z-vel.) [non-physical information]
+(node2 ID)	(node2 x-pos) (node2 y-pos) (node2 z-pos) (node2 x-vel.)    (node2 y-vel.) (node2 z-vel.) [non-physical information]
+(node3 ID)	(node3 x-pos) (node3 y-pos) (node3 z-pos) (node3 x-vel.)    (node3 y-vel.) (node3 z-vel.) [non-physical information]
+(node4 ID)	(node4 x-pos) (node4 y-pos) (node4 z-pos) (node4 x-vel.)    (node4 y-vel.) (node4 z-vel.) [non-physical information]
+(loop1 ID) ( 3 - sequence burgers vector of loop1)  ( 3 - sequence plane normal vector of loop1) [non-physical information]
+(loop ID of segment1) (node source) (node sink) (bool for boundary link)
+(loop ID of segment2) (node source) (node sink) (bool for boundary link)
+(loop ID of segment3) (node source) (node sink) (bool for boundary link)
+(loop ID of segment4) (node source) (node sink) (bool for boundary link)
+
+
+```
 
 ## How-To: Change the orientation of the crystal 
 The orientation of the crystal is controlled by altering the C2G1 entry in inputFiles/polycrystal.txt. The C2G1 variables is a 3x3 matrix in which each row corresponds to original crystal direction that now represents the new x-axis, y-axis, and z-axis for rows 1, 2, and 3 of the C2G1 matrix, respectively. Each row much be normalized to 1, each row must be orthogonal to one another, and as such, the determinant must be 1. 
@@ -322,7 +361,7 @@ C2G1 =  1   0   0
         0   1   0;
 ```
 
-If it is of interest to have the crystal oriented along a certain direction, simply select that direction as either the x, y, or z-axis and then use cross-product and dot product rules to the other appropriate axes. 
+If it is of interest to have the crystal oriented along a certain direction, simply select that direction as either the x, y, or z-axis and then use cross-product and dot product rules to find the other appropriate axes. 
 
 ## How-To: Navigate the MODEL code using doxygen
 
