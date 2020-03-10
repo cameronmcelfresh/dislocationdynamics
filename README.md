@@ -286,6 +286,7 @@ From there, the visualization window can be interacted with by several keyboard 
 - y : change y-axis of graph (follow console instruction)
 - x : change x-axis of graph (follow console instruction)
 - mouse : drag mouse to change view, scroll to zoom in/out
+- a : add or remove axis
 
 ## How-To: Record Video using FFmpeg
 1. Ensure that FFmpeg is downloaded and installed (following the steps above)
@@ -315,12 +316,19 @@ Example Video: Simulated Climb
 Care must be taken to account for the units specific to MODEL. Some of the units that are encountered most often are:
 
 - Unit of Distance = burgers Vector
-- Unit of Time = (burgers Vector) / (Speed of Sound)
-- Unit of Stress = Shear Modulus of Material 
-- Unit of Force = Shear Modulus  * (burgers vector)^2
+- Unit of Speed = Shear Wave Speed [m/s]
+- Unit of Time = Unit of Distance / Unit of Speed [sec]
+- Unit of Stress = Shear Modulus of Material [Pa]
+- Unit of Force = Shear Modulus  * (burgers vector)^2 [N]
 - Strain Rate = Strain / Unit of Time
 
+The distance units must be accounted for if dislocation structure post-processing is desired because all positions in the evl files are printed with burgers vector units. Similarly, to properly set the strain rate the unit of time must be accounted for. 
 
+For instance, if a material had a  the burgers vector is set to b = 0.14nm and a shear wave speed of 2000m/s:
+
+A DD node position of (0, 5, 10) would be transformed to (0, 0.7nm, 1.4m)
+
+A DD strain rate of 1E-9 would be transformed to 1E-14 / (0.14nm/2000) = 0.14 in real units
 
 ## How-To: Read the evl files
 The spatial information from the dislocation structures can be found in the evl folder with labels that correspond to different runIDs. For example, evl_5.txt is from runID=5. However if outputBinary=1 (set in the DD.txt input file) the evl files will be in binary, though they can still be directly analyzed using the graphing functionality in DDvtk. 
