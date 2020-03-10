@@ -312,6 +312,13 @@ Example Video: Simulated Climb
 ![](https://github.com/cameronmcelfresh/images/blob/master/dislocation_line_gif.gif)
 
 ## How-To: Understand the Units Used in MODEL
+Care must be taken to account for the units specific to MODEL. Some of the units that are encountered most often are:
+
+- Unit of Distance = burgers Vector
+- Unit of Time = (burgers Vector) / (Speed of Sound)
+- Unit of Stress = Shear Modulus of Material 
+- Unit of Force = Shear Modulus  * (burgers vector)^2
+- Strain Rate = Strain / Unit of Time
 
 
 
