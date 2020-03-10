@@ -338,17 +338,29 @@ The example evl file reads as follows:
 (# of nodes)
 (# of loops)
 (# of loop segments)
-(node1 ID)	(node1 x-pos) (node1 y-pos) (node1 z-pos) (node1 x-vel.)    (node1 y-vel.) (node1 z-vel.) [non-physical information]
-(node2 ID)	(node2 x-pos) (node2 y-pos) (node2 z-pos) (node2 x-vel.)    (node2 y-vel.) (node2 z-vel.) [non-physical information]
-(node3 ID)	(node3 x-pos) (node3 y-pos) (node3 z-pos) (node3 x-vel.)    (node3 y-vel.) (node3 z-vel.) [non-physical information]
-(node4 ID)	(node4 x-pos) (node4 y-pos) (node4 z-pos) (node4 x-vel.)    (node4 y-vel.) (node4 z-vel.) [non-physical information]
+(node1 ID)	(node1 x-pos) (node1 y-pos) (node1 z-pos)   (node1 x-vel.) (node1 y-vel.) (node1 z-vel.) [non-physical information]
+(node2 ID)	(node2 x-pos) (node2 y-pos) (node2 z-pos)   (node2 x-vel.) (node2 y-vel.) (node2 z-vel.) [non-physical information]
+(node3 ID)	(node3 x-pos) (node3 y-pos) (node3 z-pos)   (node3 x-vel.) (node3 y-vel.) (node3 z-vel.) [non-physical information]
+(node4 ID)	(node4 x-pos) (node4 y-pos) (node4 z-pos)   (node4 x-vel.) (node4 y-vel.) (node4 z-vel.) [non-physical information]
 (loop1 ID) ( 3 - sequence burgers vector of loop1)  ( 3 - sequence plane normal vector of loop1) [non-physical information]
 (loop ID of segment1) (node source) (node sink) (bool for boundary link)
 (loop ID of segment2) (node source) (node sink) (bool for boundary link)
 (loop ID of segment3) (node source) (node sink) (bool for boundary link)
 (loop ID of segment4) (node source) (node sink) (bool for boundary link)
+```
+
+Therefore we know that node 0 is at position = (0,-200,100) and connects to both node 1 and node 3 as non-boundary segments.
+
+A more abridged form of the evl file could be written as:
 
 
+```cpp
+(# of nodes)
+(# of loops)
+(# of loop segments)
+(node position info) x number of nodes
+(loop info) x number of loops
+(node connectivity) x number of segments
 ```
 
 ## How-To: Change the orientation of the crystal 
