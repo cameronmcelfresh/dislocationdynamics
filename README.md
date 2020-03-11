@@ -258,8 +258,14 @@ neper -M n1-id1.tess  #assuming the .tess file previously produced is n1-id1.tes
 ```
 3. The location of the .msh file should then be specified in the inputFiles/polycrystal.txt file.
 
-
 Note:  After a new .msh file is generated and specified in polycrystal.txt, the corresponding microstructureGenerator, Ddvtk, and DDomp executables must ALSO be regenerated.
+
+Neper Installation Notes: For MacOS, a "gsl library not found" error may occur when gsl is in fact installed. This can be circumvented by adding
+
+```cpp
+include_directories("path/to/gsl/2.6./include")
+``` 
+in the CMakeLists.txt file in the src folder. The same goes for the NLopt library if cmake is unable to link. 
 
 ## How-To: Use DDvtk
 Follow instructions on how to install VTK found here: https://vtk.org/Wiki/VTK/Building/Linux. Once there is a operational form of VTK installed, do the following:
