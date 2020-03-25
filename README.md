@@ -402,5 +402,5 @@ C2G1 =  1   0   0
 
 If it is of interest to have the crystal oriented along a certain direction, simply select that direction as either the x, y, or z-axis and then use cross-product and dot product rules to find the other appropriate axes. Changing the orientation of the crystal does NOT change the orientation of the stresses or mesh - it changes the orientation of the glide planes internal to the mesh. 
 
-## How-To: Navigate the MODEL code using doxygen
-
+## How-To: Navigate the MODEL code using Doxygen
+To learn the dependencies of the MODEL codebase Doxygen can be used to navigate through the code. Firstly, follow standard instructions to download and install Doxygen (http://www.doxygen.nl). After running doxygen, which can easily be done with the "doxywizard" command in the terminal, simply run Doxygen in the doxygen folder of the MODEL library.
